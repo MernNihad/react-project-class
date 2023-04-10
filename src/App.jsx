@@ -1,47 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
-import React,{useState} from 'react';
+import "./App.css";
+import React, { useState } from "react";
 
 function App() {
-  const [login,setLogin] = useState(false)
-  const [signup,setSingup] = useState(false)
+  const [name,setName] = useState('')
+  const [email,setEmail] = useState('')
+  const [password,setPassword] = useState('')
+  const [status,setStatus] = useState(false)
 
-  const handle =()=> {
-    // console.log('clicked..')
-    setLogin(true)
-    setSingup(false)
+  const handleSubmit = (event)=>{
+    event.preventDefault()
+    setStatus(true)
+    console.log(event);
   }
- const handleSingup = ()=>{
-  setSingup(true) 
-  setLogin(false)}
+  const handleName = (event) => setName(event.target.value)
+  const handleEmail = (event) => setEmail(event.target.value)
+  const handlePassword = (event) => setPassword(event.target.value)
 
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <h1 >{number}</h1>
-        <button onClick={ClickHandle} style={{padding:'10px',margin:'10px'}}>Button</button> */}
-        <button onClick={handle} >Login</button>
-        <button onClick={handleSingup}>Signup</button>
+    <div className="App" >
+      <form action="" onSubmit={handleSubmit} className="form">
+        <h4>Signup</h4>
+        <input type="text" placeholder="Name" name="name" onChange={handleName} value={name}  />
+        <input type="text" placeholder="Email" name="email" onChange={handleEmail} value={email} />
+        <input type="text" placeholder="Password" name="password" onChange={handlePassword} value={password} />
+        <button type="submit">Submit</button>
+      </form>
 
-
-      { login&& <form action="">
-          <h4>Login</h4>
-          <input type="text"  placeholder='Email'/>
-          <input type="text" placeholder='Password' />
-        </form>}
-
-       { signup&& <form action="">
-          <h4>Signup</h4>
-          <input type="text"  placeholder='Name'/>
-          <input type="text"  placeholder='Email'/>
-          <input type="text" placeholder='Password' />
-        </form>}
-
-
-
-
-
-      </header>
+      { status&&<div className="form-body">
+        <p>Name : {name}</p>
+        <p>Email : {email}</p>
+        <p>Password : {password}</p>
+      </div>}
     </div>
   );
 }

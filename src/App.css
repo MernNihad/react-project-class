@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+input{
+  padding: 10px;
+  text-align: center;
+  margin: 5px;
+}
+button{
+  padding: 10px 80px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  border: 1px solid black;
+  
+}
+
+.form-body{
+  padding: 20px;
+  background-color: beige;
+  margin: 10px 10px;
+}
