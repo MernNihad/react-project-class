@@ -1,32 +1,38 @@
 import React, { useState } from "react";
-import Card from "./component/Card";
+
 import axios from "axios";
-
+import Header from "./component/Header/Header";
+import './App.css'
+import Banner from "./component/Banner/Banner";
+import Card from "./component/Card/Card";
+import Move from "./asset/move.jpg";
 function App() {
-  const [title, setTitle] = useState("klkl");
-  const [link, setLink] = useState("fgf");
-  const [subTitle, setSubTitle] = useState("fdf");
-  const [description, setDescription] = useState("dfdfd");
-  const [value, setValue] = useState([]);
-  let url = "https://api.publicapis.org/entries";
-  axios.get(`${url}`).then((response) => {
-    const { count, entries } = response.data;
-    setValue(entries);
-  });
-
+  
+  const [move,setMovie]= useState(Move)
   return (
-    <div className="container">
-      <div className="row">
-        {value.map((response) => (
-          <Card
-            className={""}
-            title={response.API}
-            sub_title={response.Category}
-            description={response.Description}
-            link={response.Link}
-          />
-        ))}
+
+    <div className="">
+      <div className="header-component">
+        <Header/>
       </div>
+     {/* <div className=""> */}
+     <div className="card-component container">
+      <Card image={move}/>
+      <Card image={move}/>
+      <Card image={move}/>
+      <Card image={move}/>
+      <Card image={move}/>
+      <Card image={move}/>
+     </div>
+     <div className="card-component container">
+      <Card image={move} />
+      <Card image={move}/>
+      <Card image={move}/>
+      <Card image={move}/>
+      <Card image={move}/>
+      <Card image={move}/>
+     </div>
+     
     </div>
   );
 }
