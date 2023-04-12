@@ -1,10 +1,10 @@
 import React from 'react'
 import './Card.css'
 
-function Card({image}) {
+function Card({image,className}) {
   return (
     <div className='card-body'>
-        <img className='card-image' src={image} alt="" />
+        <img className={className} src={`https://image.tmdb.org/t/p/w500/${image}`} alt="" />
     </div>
   )
 }

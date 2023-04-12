@@ -1,4 +1,4 @@
-.card-image{
+.action-card{
     width: 215px;
     height: 250px;
 }
@@ -7,4 +7,9 @@
 }
 .card-body:hover{
     transform: scale(1.1);
+}
+
+.tranding-card{
+    width: 230px;
+    height: 300px;
 }
